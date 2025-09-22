@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>XML Parsing Example</title>
+</head>
+<body>
+  <h2>CD Catalog</h2>
+  <div id="output"></div>
+
+  <script>
+    // Load XML file using fetch
+    fetch("cd_catalog.xml")
+      .then(response => response.text())
+      .then(xmlString => {
+        // Parse XML string to XML DOM
+        let parser = new DOMParser();
+        let xmlDoc = parser.parseFromString(xmlString, "application/xml");
+
+        // Extract all <cd> elements
+        let cds = xmlDoc.getElementsByTagName("cd");
+        let output = "";
+
+        for (let i = 0; i < cds.length; i++) {
+          let title = cds[i].getElementsByTagName("title")[0].textContent;
+          let artist = cds[i].getElementsByTagName("artist")[0].textContent;
+          let price = cds[i].getElementsByTagName("price")[0].textContent;
+
+          output += `<p><strong>${title}</strong> by ${artist} - $${price}</p>`;
+        }
+
+        document.getElementById("output").innerHTML = output;
+      })
+      .catch(err => console.error("Error loading XML:", err));
+  </script>
+</body>
+</html>

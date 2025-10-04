@@ -1,0 +1,72 @@
+<!-- [A] Write a program in JavaScript to perform arithmetic operations. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+
+        Enter Number 1 : <input type="text" id="num1" required> <br> <br>
+        Enter Number 2 : <input type="text" id="num2" required> <br> <br> 
+        <br><br>
+        
+        <button type="button" id="add">Addition</button>
+        <button type="button" id="sub">Substraction</button>
+        <button type="button" id="mul">Multiplication</button>
+        <button type="button" id="div">Division</button>
+
+
+        <p id="result"></p>
+    </form>
+
+
+    <script>
+        const addbtn = document.getElementById("add");
+        const subbtn = document.getElementById("sub");
+        const mulbtn = document.getElementById("mul");
+        const divbtn = document.getElementById("div");
+
+        addbtn.addEventListener("click", function() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const result = num1 + num2;
+            document.getElementById("result").innerText = "Result: " + result;
+        });
+
+
+        subbtn.addEventListener("click", function() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const result = num1 - num2;
+            document.getElementById("result").innerText = "Result: " + result;
+        });
+
+        mulbtn.addEventListener("click", function() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const result = num1 * num2;
+            document.getElementById("result").innerText = "Result: " + result;
+        });
+
+        divbtn.addEventListener("click", function() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            if (num2 !== 0) {
+                const result = num1 / num2;
+                document.getElementById("result").innerText = "Result: " + result;
+            } else {
+                document.getElementById("result").innerText = "Error: Division by zero";
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>

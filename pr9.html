@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 25px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #0066ff;
+      outline: none;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056cc;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
+
+  <script>
+    function validateForm() {
+      // Getting all values
+      let firstName = document.getElementById("fname").value.trim();
+      let lastName = document.getElementById("lname").value.trim();
+      let password = document.getElementById("password").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let mobile = document.getElementById("mobile").value.trim();
+      let address = document.getElementById("address").value.trim();
+
+      // 1. Validate First Name
+      let namePattern = /^[A-Za-z]+$/;
+      if (firstName.length < 6 || !namePattern.test(firstName)) {
+        alert("First Name should contain only alphabets and must be at least 6 characters long.");
+        return false;
+      }
+
+      // 2. Validate Password
+      if (password.length < 6) {
+        alert("Password should not be less than 6 characters.");
+        return false;
+      }
+
+      // 3. Validate Email
+      let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid Email ID (example: name@domain.com).");
+        return false;
+      }
+
+      // 4. Validate Mobile Number
+      let mobilePattern = /^[0-9]{10}$/;
+      if (!mobilePattern.test(mobile)) {
+        alert("Mobile Number should contain exactly 10 digits.");
+        return false;
+      }
+
+      // 5. Validate Last Name and Address
+      if (lastName === "") {
+        alert("Last Name should not be empty.");
+        return false;
+      }
+      if (address === "") {
+        alert("Address should not be empty.");
+        return false;
+      }
+
+      // If all validations pass
+      alert("Registration Successful!");
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Registration Form</h2>
+    <form onsubmit="return validateForm()">
+      <label>First Name:</label>
+      <input type="text" id="fname" placeholder="Enter first name">
+
+      <label>Last Name:</label>
+      <input type="text" id="lname" placeholder="Enter last name">
+
+      <label>Password:</label>
+      <input type="password" id="password" placeholder="Enter password">
+
+      <label>Email ID:</label>
+      <input type="text" id="email" placeholder="example@gmail.com">
+
+      <label>Mobile Number:</label>
+      <input type="text" id="mobile" placeholder="10-digit number">
+
+      <label>Address:</label>
+      <textarea id="address" rows="3" placeholder="Enter address"></textarea>
+
+      <input type="submit" value="Register">
+    </form>
+    <p class="note">All fields are mandatory.</p>
+  </div>
+</body>
+</html>

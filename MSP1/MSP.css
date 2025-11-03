@@ -1,0 +1,36 @@
+   body{
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .card{
+            background-color: rgb(90, 10, 10);
+            height: 29rem;
+            width: 23rem;
+            display: flex;
+            color: wheat;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+
+        .content{
+            font: 200;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 1.5rem 1rem 1.9rem 1rem;
+            border-radius: 0 0 10px 10px;
+            justify-self: auto;
+            color: wheat;
+            background-color: rgb(21, 47, 72);
+            text-align: justify;
+            text-justify: inter-word;   
+        }
+
+        img{
+            border-radius: 10px;
+        }
+

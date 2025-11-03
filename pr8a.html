@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>While and For Loop Example</title>
+  <script>
+    function showLoops() {
+      let forOutput = "Using For Loop:<br>";
+      for (let i = 1; i <= 5; i++) {
+        forOutput += "Number: " + i + "<br>";
+      }
+
+      let whileOutput = "Using While Loop:<br>";
+      let j = 1;
+      while (j <= 5) {
+        whileOutput += "Number: " + j + "<br>";
+        j++;
+      }
+      document.getElementById("forLoop").innerHTML = forOutput;
+      document.getElementById("whileLoop").innerHTML = whileOutput;
+    }
+  </script>
+</head>
+<body>
+  <h2>While and For Loop</h2>
+  <button onclick="showLoops()">Run Loops</button>
+
+  <h3>Output:</h3>
+  <div id="forLoop"></div>
+  <div id="whileLoop"></div>
+</body>
+</html>

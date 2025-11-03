@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conditional Statements and Functions Example</title>
+  <script>
+    
+    function checkNumber() {
+      let num = document.getElementById("numberInput").value; 
+
+    if (num > 0) {
+        document.getElementById("result").innerHTML = "The number is Positive.";
+      } 
+      else if (num < 0) {
+        document.getElementById("result").innerHTML = "The number is Negative.";
+      } 
+      else if (num == 0) {
+        document.getElementById("result").innerHTML = "The number is Zero.";
+      } 
+      else {
+        document.getElementById("result").innerHTML = "Please enter a valid number.";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Conditional Statements and Functions</h2>
+
+  <p>Enter a number:</p>
+  <input type="text" id="numberInput">
+  <button onclick="checkNumber()">Check</button>
+
+  <h3>Result:</h3>
+  <p id="result"></p>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+  <!ELEMENT bookstore (book)>
+  <!ELEMENT book (title, author, isbn, publisher, edition, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT isbn (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT edition (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+]>
+<bookstore>
+  <book>
+    <title>Learning Web Development</title>
+    <author>Tanmay Warthe</author>
+    <isbn>978-93-5267-1234</isbn>
+    <publisher>TechPress Publications</publisher>
+    <edition>3rd Edition</edition>
+    <price>₹599</price>
+  </book>
+</bookstore>
